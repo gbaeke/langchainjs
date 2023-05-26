@@ -1,8 +1,14 @@
 {
   "dependencies": {
+    "@pinecone-database/pinecone": "^0.1.6",
+    "@types/node": "^20.2.3",
+    "axios": "^1.4.0",
+    "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.0.3",
+    "faiss-node": "^0.1.1",
     "langchain": "^0.0.78",
     "openai": "^3.2.1",
+    "pickleparser": "^0.1.0",
     "typescript": "^5.0.4"
   }
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ask me about your blog</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    <style>
+        .message { border-radius: 10px; padding: 10px; margin: 5px; }
+        .user { background-color: #e0f7fa; }
+        .bot { background-color: #c8e6c9; }
+        #question-form { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Ask me about your blog</a>
+    </nav>
+    <form id="question-form" class="container mt-5">
+        <div class="form-group">
+            <label for="question">Ask a question:</label>
+            <input type="text" id="question" name="question" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <div id="answer" class="container"></div>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+        const form = document.querySelector('#question-form');
+        const answerDiv = document.querySelector('#answer');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const question = document.querySelector('#question').value;
+            console.log(question);
+            const response = await fetch('/answer', {
+                method: 'POST',
+                body: `question=${question}`,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            });
+            const answer = await response.text();
+            answerDiv.innerHTML += `<p class="message user text-left"><strong>You:</strong> ${question}</p><p class="message bot text-right"><strong>Bot:</strong> ${answer}</p>`;
+            document.querySelector('#question').value = '';
+        });
+    </script>
+</body>
+</html>

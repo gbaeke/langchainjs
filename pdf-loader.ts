@@ -1,6 +1,5 @@
 import { PDFLoader } from "langchain/document_loaders/fs/pdf";
-import { OpenAI } from "langchain/llms/openai";
-import { loadQAMapReduceChain } from "langchain/chains";
+import { ChatOpenAI } from "langchain/chat_models/openai";
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { VectorDBQAChain } from "langchain/chains";
@@ -26,14 +25,17 @@ import 'dotenv/config'
     // create a vector store, here we use the memory vector store
     const vectorStore = await MemoryVectorStore.fromDocuments(docs, new OpenAIEmbeddings());
 
-    const model = new OpenAI({ temperature: 0 });
+    // use a chat model to answer questions
+    const model = new ChatOpenAI({ temperature: 0 });
 
+    // create a vector db qa chain using the in memory vector store and the chat model
     const chain = VectorDBQAChain.fromLLM(model, vectorStore, {
       k: 5,
       returnSourceDocuments: true,
     });
 
-    // similarity search
+    // kick of the questions, you can ask further questions such as
+    // "Can it be used for networking?"
     const res = await chain.call({ query: "What is eBPF?" });
     console.log({ res });
 

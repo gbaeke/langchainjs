@@ -1,0 +1,1 @@
+If you decide to integrate your own MS Teams meeting URL, then you can change the settings of your meeting. These settings will determine whether you want to have a waiting room (lobby), if you want to allow audio or camera etc. You can find these settings in your (Outlook) calender in the menu on top, when opening the meeting appointment.

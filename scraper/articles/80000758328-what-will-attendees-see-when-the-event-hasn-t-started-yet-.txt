@@ -1,0 +1,1 @@
+If your attendees try to login before your event has started, they will be redirected to a waiting room where they will see a countdown. Once the countdown is finished, the users will be automatically redirected to the lobby of the event.

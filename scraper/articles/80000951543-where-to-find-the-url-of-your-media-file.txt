@@ -1,0 +1,1 @@
+In case you are configuring a link button that leads to a media file (image or PDF), you will need to insert the URL of your media file. You can find it here:Go to the dashboardSelect the event that you want to configureGo the media libraryFind the respective media fileClick on the 'URL icon' to copy the URL of your media fileList view:Image view:

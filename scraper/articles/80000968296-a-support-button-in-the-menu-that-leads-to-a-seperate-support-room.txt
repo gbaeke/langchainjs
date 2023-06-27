@@ -1,0 +1,1 @@
+To improve the user experience of your participants, you can now add a support button to the menu bar of your event. This support button will lead to a seperate support room, where you can help your employees in case of questions or (technical) issues. Important: this support button will only appear in the menu if you have configured a room with the slug 'support'.

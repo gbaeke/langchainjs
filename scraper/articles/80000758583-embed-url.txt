@@ -1,0 +1,1 @@
+If you like to integrate a video into our platform, then you need to insert the 'embed URL' because the regular URL will give an error. Read here how to find the embed URL of a video on:YouTubeVimeo

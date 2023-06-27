@@ -1,0 +1,1 @@
+If you want to get a better overview of how many tickets you have purchased and how many you have already consumed, then you can go the organisation settings and take a look under the fourth icon 'tickets'. Here you can find a balance of your tickets. We work with a color code:Green = purchased ticketsRed = consumed tickets

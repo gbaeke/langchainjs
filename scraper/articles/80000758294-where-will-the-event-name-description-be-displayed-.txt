@@ -1,0 +1,1 @@
+Your event name and description will be displayed on the reception page of your event. This page will only be used if you let your users register via Thola. If you provide them with a login URL they will not see this page.Your event name will also appear in the invitation e-mail that your users will receive. Event name & description:Reception page:Invitation e-mail:

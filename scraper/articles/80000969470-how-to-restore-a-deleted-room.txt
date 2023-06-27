@@ -1,0 +1,1 @@
+In case you have deleted a room, you can restore it up to 30 days after you have deleted it.Read here how to restore it: Restore a deleted room:  Go to the dashboardSelect the event in which you want to restore a deleted a room Go to roomsSelect 'restore deleted room'Click on the 3 dots next to the room that you want to restoreSelect 'restore room'

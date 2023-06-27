@@ -1,0 +1,6 @@
+Each room needs to have a room background. There are three options for your room background: Choose a room background from the media libraryLet your designer create a customised background (you can find the specifications in the attachment below)Ask the Thola team to create a customised background for youGeneral room specificationsWidth = 1280Height = 650 Where to set your room backgroundImportant: in case you are working with a customised background, make sure that you have first uploaded your new room background to your media library. Go to the dashboardSelect the event that you're configuringGo to rooms Select 'edit in visual editor' of the room of which you want to change the room backgroundSelect 'room settings'Select 'general' Scroll down to 'room background'Click on the 'media icon' Select your room backgroundPress 'save'Important: It's necessary that you first set your room background before you start adding components. 
+Attachments (1)
+
+
+pdf
+Thola-config....pdf5.85 MB

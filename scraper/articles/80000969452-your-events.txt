@@ -1,0 +1,1 @@
+When logging into the dahboard you will find an overview of your events. By default we show your current and future events. Past events can be found when selecting 'show past events'. You can filter on:Event nameSlugEvent periodThe settings symbol, next your organisation name, leads to your organisation settings. Read more about it here.

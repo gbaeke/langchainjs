@@ -1,0 +1,1 @@
+How to find the embed URL on YoutubeGo to YouTubeOpen the video that you want to embedSelect 'share' beneath the videoSelect 'embed'Copy the URL that is between the first two brackets

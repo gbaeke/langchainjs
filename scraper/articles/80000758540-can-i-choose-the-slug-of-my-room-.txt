@@ -1,0 +1,1 @@
+You are free to choose the slug of your room with exception of the lobby and your support room. LobbyThe slug of your lobby always needs to be 'lobby' because once you have created your event, the URL for your lobby is automatically created as well. So you need to have at least one room with the slug 'lobby'.Support roomRead more about to configure a support room here.

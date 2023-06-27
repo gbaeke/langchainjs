@@ -1,0 +1,1 @@
+Once your event has been created, the slug cannot be changed anymore.This is because the event URL (which includes the event slug), will automatically be generated when creating an event.

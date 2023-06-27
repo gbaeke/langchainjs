@@ -1,0 +1,1 @@
+Instead of deleting images one by one manually, you can now us our bulk delete functionality to delete multiple images at the same time. Follow the next steps:Go to the dashboardSelect the event that you want to configureGo to the media librarySelect 'bulk delete'Select the images that you want to deleteSelect 'delete selected files'Confirm by selecting 'delete'.

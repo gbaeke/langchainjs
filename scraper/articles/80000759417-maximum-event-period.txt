@@ -1,0 +1,1 @@
+The maximum timespan for an attendee to login to the platform is 7 days. In case your event needs to be longer than 7 days you can contact us via support@thola.events or create a new support ticket.

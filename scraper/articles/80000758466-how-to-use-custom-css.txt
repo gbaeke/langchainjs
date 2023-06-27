@@ -1,0 +1,1 @@
+In case you want to make changes to our platform styling you can use custom css.Only apply custom css if you have sufficient knowledge about this. Otherwise you might break our platform code. If you are not experienced with css, please reach out to us via support@thola.events or create a new support ticket.

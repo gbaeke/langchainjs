@@ -1,0 +1,1 @@
+If you would like to share the URL of your meetings that have been created in Thola, you can follow the next steps:Go to the dashboardSelect the right eventGo to 'meetings'Select the meeting of which your want to copy the URLScroll down to 'copy meeting URL'Click on the clipboard symbol on the right side

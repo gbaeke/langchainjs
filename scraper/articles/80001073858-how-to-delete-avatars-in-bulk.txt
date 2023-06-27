@@ -1,0 +1,1 @@
+Instead of deleting avatars one by one manually, you can now us our bulk delete functionality to delete multiple avatars at the same time. Follow the next steps:Go to the dashboardSelect the event that you want to configureGo to 'avatars'Select 'bulk delete'Select the avatars you want to deleteSelect 'delete selected avatars'Confirm by selecting 'delete'

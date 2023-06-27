@@ -46,15 +46,15 @@ import 'dotenv/config'
 
   // use prompt layer; see https://promptlayer.com
   // only works with standard completions, not with chat
-  const model = new PromptLayerOpenAI({
-    temperature: 0.9,
-  })
+  // const model = new PromptLayerOpenAI({
+  //   temperature: 0.9,
+  // })
 
-  const res4 = await model.call(
-    "What's a good name for a Kubernetes cluster?"
-  );
+  // const res4 = await model.call(
+  //   "What's a good name for a Kubernetes cluster?"
+  // );
 
-  console.log(res4);
+  // console.log(res4);
 
 })();
   

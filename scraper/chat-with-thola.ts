@@ -4,23 +4,26 @@ import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { VectorDBQAChain } from "langchain/chains";
 import readline from 'readline';
-
-
-
-
-// load from dotenv
+import path from 'path';
+import { TextLoader } from "langchain/document_loaders/fs/text";
+import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
 import 'dotenv/config'
+
+const envPath = path.join(__dirname, '..', '.env');
+require('dotenv').config({ path: envPath });
+
 
 
 (async function main() {
-    const loader = new PDFLoader("pdf_docs/ebpf.pdf", { splitPages: true });
+    const loader = new DirectoryLoader("./articles",
+        {
+            ".txt": (path) => new TextLoader(path),
+        });
 
-    // create one document per page (default)
-    // add { splitPages: false } to create one document for the whole PDF
     const docs = await loader.load();
 
     // how many pages?
-    console.log(docs.length);
+    console.log('Pages loaded: ', docs.length);
 
     // create a vector store, here we use the memory vector store
     const vectorStore = await MemoryVectorStore.fromDocuments(docs, new OpenAIEmbeddings());
@@ -30,13 +33,11 @@ import 'dotenv/config'
 
     // create a vector db qa chain using the in memory vector store and the chat model
     const chain = VectorDBQAChain.fromLLM(model, vectorStore, {
-      k: 5,
+      k: 2,
       returnSourceDocuments: true,
     });
 
-    // kick of the questions, you can ask further questions such as
-    // "Can it be used for networking?"
-    const res = await chain.call({ query: "What is eBPF?" });
+    const res = await chain.call({ query: "How can I lock my room?" });
     console.log({ res });
 
     const rl = readline.createInterface({

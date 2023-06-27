@@ -3,6 +3,7 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 from dotenv import load_dotenv
 
 # load env vars
@@ -18,7 +19,7 @@ db = FAISS.load_local("faiss_db", embeddings)
 memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
 # llm
-llm = OpenAI(temperature=0, client=None)
+llm = ChatOpenAI(temperature=0, client=None)
 
 # init retrieval chain
 qa = ConversationalRetrievalChain.from_llm(llm, db.as_retriever(), memory=memory)

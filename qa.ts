@@ -1,12 +1,10 @@
 import { OpenAI } from "langchain/llms/openai";
-import { loadQAStuffChain, loadQAMapReduceChain } from "langchain/chains";
+import { loadQAStuffChain, loadQAMapReduceChain, loadQARefineChain } from "langchain/chains";
 import { Document } from "langchain/document";
 import 'dotenv/config'
-import { PineconeClient } from "@pinecone-database/pinecone";
+import { PDFLoader } from "langchain/document_loaders/fs/pdf";
+import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
-import { PineconeStore } from "langchain/vectorstores/pinecone";
-import { VectorDBQAChain } from "langchain/chains";
-import process from 'process'
 
 
 
@@ -24,10 +22,19 @@ import process from 'process'
   console.log({ resA });
 
   const llmB = new OpenAI({ maxConcurrency: 10, verbose: true });
-  const chainB = loadQAMapReduceChain(llmB);
+  const chainB = loadQARefineChain(llmB);
+  const loader = new PDFLoader("pdf_docs/ebpf.pdf");
+  const pdfDocs = await loader.load();
+
+  const question = "Who wrote this eBDF book?";
+
+  // get only relevant documents to avoid going over every page in the PDF
+  const store = await MemoryVectorStore.fromDocuments(pdfDocs, new OpenAIEmbeddings());
+  const relevantDocs = await store.similaritySearch(question, 5);
+
   const resB = await chainB.call({
-    input_documents: docs,
-    question: "Who is the developer?",
+    input_documents: relevantDocs,
+    question: question,
   });
   console.log({ resB });
 

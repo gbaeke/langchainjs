@@ -15,7 +15,7 @@ To run a .ts file (there are other ways)
 ts-node intro.ts
 ```
 
-Note: wrap code in the IIFE (Immediately-invoked Function Expression) to easily allow await
+Note: wrap code in the IIFE (Immediately-invoked Function Expression) to allow await
 
 To work with OpenAI APIs, include an .env file with:
 

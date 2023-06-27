@@ -26,7 +26,7 @@ import { OpenAIEmbeddings } from "langchain/embeddings/openai";
   const loader = new PDFLoader("pdf_docs/ebpf.pdf");
   const pdfDocs = await loader.load();
 
-  const question = "Who wrote this eBDF book?";
+  const question = "Who wrote this eBPF book?";
 
   // get only relevant documents to avoid going over every page in the PDF
   const store = await MemoryVectorStore.fromDocuments(pdfDocs, new OpenAIEmbeddings());
